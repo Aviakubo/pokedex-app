@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/uikit-rtl.css"/>
+    <link rel="stylesheet" href="/uikit-rtl.min.css"/>
+    <link rel="stylesheet" href="/uikit.css"/>
+    <link rel="stylesheet" href="/uikit.min.css"/>
+    <title>Pokedex</title>
+</head>
+<body>
+    <h1>Edit</h1>
+        <!-- Name of Pokemon as Title -->
+        <h2><%= pokemon.name %></h2>
+        <!-- image of pokemon -->
+        <img src=<%= pokemon.img %>>
+        <!-- type, stats -->
+        <br>
+        <br>
+        Name: <input type="text" name="name" value="<%=pokemon.name%>"/><br/>
+		Image Link: <input type="text" name="image" value="<%=pokemon.img%>"/><br>
+        Type: <input type="text" name="type" value="<%=pokemon.type%>"/><br>
+        HP: <input type="text" name="HP" value="<%=pokemon.stats.hp%>"/><br>
+        Attack: <input type="text" name="Attack" value="<%=pokemon.stats.attack%>"/><br>
+        Defense: <input type="text" name="Defense" value="<%=pokemon.stats.defense%>"/><br>
+        SP Attack: <input type="text" name="SP Attack" value="<%=pokemon.stats.spattack%>"/><br>
+        SP Defense: <input type="text" name="SP Defense" value="<%=pokemon.stats.spdefense%>"/><br>
+        Speed: <input type="text" name="Speed" value="<%=pokemon.stats.speed%>"/>
+        <br>
+		<br>
+		<input type="submit" name="" value="Submit Changes"/>
+    <a href="/pokemon"><button>Back Home</button></a>
+</body>
+</html>

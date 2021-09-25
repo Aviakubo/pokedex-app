@@ -5,11 +5,13 @@ const port = 3000;
 
 // Const for API data
 const pokemon = require('./models/pokemon.js');
+const methodOverride = require('method-override');
 
 // MIDDLEWARE
 // -------------------
 var bodyParser = require('body-parser');
 app.use(express.static('public'))
+app.use(methodOverride('_method'));
 
 // INDEX
 // -------------------
@@ -17,27 +19,53 @@ app.get('/pokemon', (req, res) => {
     res.render('index.ejs', { pokemon: pokemon });
 });
 
+// NEW
+// -------------------
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+// DESTROY
+// -------------------
+app.delete('/pokemon/:id', (req, res) => {
+    pokemon.splice(req.params.id, 1);
+    res.redirect('/pokemon');
+  });
+
+// UPDATE
+// -------------------
+app.put('/pokemon/:id', (req, res) => {
+	pokemon[req.params.id] = req.body;
+	res.redirect('/pokemon');
+});
+
+// CREATE
+// -------------------
+app.post('/pokemon', (req, res) => {
+    console.log(req.body);
+    pokemon.push(req.body);
+    res.redirect('/pokemon');
+});
+
+// EDIT
+// -------------------
+app.get('/pokemon/:id/edit', (req, res) => {
+	res.render(
+		'edit.ejs',
+		{
+			pokemon: pokemon[req.params.idOfPokemon],
+			index: req.params.id,
+            pokemon: pokemon[req.params.id]
+		}
+	);
+});
+
+// SHOW
+// -------------------
 app.get('/pokemon/:id', (req, res) => {
     res.render('show.ejs', { pokemon: pokemon[req.params.id] });
 });
 
-// NEW
-// -------------------
-
-// DESTROY
-// -------------------
-
-// UPDATE
-// -------------------
-
-// CREATE
-// -------------------
-
-// EDIT
-// -------------------
-
-// SHOW
-// -------------------
 
 // Express Web Server port - app.listen
 app.listen(port, ()=>{
