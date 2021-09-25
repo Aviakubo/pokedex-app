@@ -16,18 +16,27 @@
         <h2><%= pokemon.name %></h2>
         <!-- image of pokemon -->
         <img src=<%= pokemon.img %>>
-        <!-- type, stats -->
         <br>
         <br>
+        <form action="/pokemon/<%=index%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=pokemon.name%>"/><br/>
-		Image Link: <input type="text" name="image" value="<%=pokemon.img%>"/><br>
+        
+        Image: <input type="text" name="img" value="<%=pokemon.img%>"/><br>
+
         Type: <input type="text" name="type" value="<%=pokemon.type%>"/><br>
-        HP: <input type="text" name="HP" value="<%=pokemon.stats.hp%>"/><br>
-        Attack: <input type="text" name="Attack" value="<%=pokemon.stats.attack%>"/><br>
-        Defense: <input type="text" name="Defense" value="<%=pokemon.stats.defense%>"/><br>
-        SP Attack: <input type="text" name="SP Attack" value="<%=pokemon.stats.spattack%>"/><br>
-        SP Defense: <input type="text" name="SP Defense" value="<%=pokemon.stats.spdefense%>"/><br>
-        Speed: <input type="text" name="Speed" value="<%=pokemon.stats.speed%>"/>
+
+        HP: <input type="text" name="hp" value="<%=pokemon.stats.hp%>"/><br>
+
+        Attack: <input type="text" name="attack" value="<%=pokemon.stats.attack%>"/><br>
+
+        Defense: <input type="text" name="defense" value="<%=pokemon.stats.defense%>"/><br>
+
+        SP Attack: <input type="text" name="spattack" value="<%=pokemon.stats.spattack%>"/><br>
+
+        SP Defense: <input type="text" name="spdefense" value="<%=pokemon.stats.spdefense%>"/><br>
+
+        Speed: <input type="text" name="speed" value="<%=pokemon.stats.speed%>"/>
+
         <br>
 		<br>
 		<input type="submit" name="" value="Submit Changes"/>
