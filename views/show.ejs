@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/uikit-rtl.css"/>
+    <link rel="stylesheet" href="/uikit-rtl.min.css"/>
+    <link rel="stylesheet" href="/uikit.css"/>
+    <link rel="stylesheet" href="/uikit.min.css"/>
+</head>
+<body>
+    <h1>Pokedex</h1>
+    <!-- nav partial home, add -->
+
+    <!-- Name of Pokemon as Title -->
+    <h2><%= pokemon.name %></h2>
+    <!-- image of pokemon -->
+    <img src=<%= pokemon.img %>>
+    <!-- type, stats -->
+    <p>
+       Type: <%= pokemon.type %>
+        <ul>
+            <li>HP: <%= pokemon.stats.hp %></li>
+            <li>Attack: <%= pokemon.stats.attack %></li>
+            <li>Defense: <%= pokemon.stats.defense %></li>
+            <li>SP Attack: <%= pokemon.stats.spattack %></li>
+            <li>SP Defense: <%= pokemon.stats.spdefense %></li>
+            <li>Speed: <%= pokemon.stats.speed %></li>
+        <ul>
+    </p>
+    <!-- moves -->
+
+    <!-- edit & delete button -->
+    
+
+    <!-- footer nav to go back to home -->
+</body>
+</html>
