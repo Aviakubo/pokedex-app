@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 
 // MIDDLEWARE
 // -------------------
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
 app.use(express.static('public'))
 app.use(methodOverride('_method'));
 
