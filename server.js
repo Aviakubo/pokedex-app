@@ -36,6 +36,7 @@ app.delete('/pokemon/:id', (req, res) => {
 // -------------------
 app.put('/pokemon/:id', (req, res) => {
 	pokemon[req.params.id] = req.body;
+    console.log(req.body);
     // req.body.stats = {
     //     hp: req.body.stats[0],
     //     attack: req.body.stats[1],
