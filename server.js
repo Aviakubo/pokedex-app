@@ -38,14 +38,14 @@ app.delete('/pokemon/:id', (req, res) => {
 app.put('/pokemon/:id', (req, res) => {
 	pokemon[req.params.id] = req.body;
     console.log(req.body);
-    // req.body.stats = {
-    //     hp: req.body.stats[0],
-    //     attack: req.body.stats[1],
-    //     defense: req.body.stats[2],
-    //     spattack: req.body.stats[3],
-    //     spdefense: req.body.stats[4],
-    //     speed: req.body.stats[5],
-    // }
+    req.body.stats = {
+        hp: req.body.stats[0],
+        attack: req.body.stats[1],
+        defense: req.body.stats[2],
+        spattack: req.body.stats[3],
+        spdefense: req.body.stats[4],
+        speed: req.body.stats[5],
+    }
 	res.redirect('/pokemon');
 });
 
