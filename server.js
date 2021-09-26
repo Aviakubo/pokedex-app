@@ -9,9 +9,10 @@ const methodOverride = require('method-override');
 
 // MIDDLEWARE
 // -------------------
-var bodyParser = require('body-parser')
-app.use(express.static('public'))
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
+app.use(express.urlencoded({extended: false}));
+var bodyParser = require('body-parser');
 
 // INDEX
 // -------------------
