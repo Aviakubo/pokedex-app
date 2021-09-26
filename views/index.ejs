@@ -25,8 +25,9 @@
     <!-- list of pokemon -->
     <!-- within list, show image, name-->
     <ul>
-        <% for(let i = 0; i < pokemon.length; i++) { %>
+        <% for(let i = 0; i < pokemon.length; i++) {%>
           <li>
+              <h3><%= pokemon[i].name %></h3>
               <a href="/pokemon/<%=i%>">
               <img src="<%= pokemon[i].img %>">
               </a>

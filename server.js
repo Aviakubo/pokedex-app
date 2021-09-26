@@ -36,6 +36,14 @@ app.delete('/pokemon/:id', (req, res) => {
 // -------------------
 app.put('/pokemon/:id', (req, res) => {
 	pokemon[req.params.id] = req.body;
+    // req.body.stats = {
+    //     hp: req.body.stats[0],
+    //     attack: req.body.stats[1],
+    //     defense: req.body.stats[2],
+    //     spattack: req.body.stats[3],
+    //     spdefense: req.body.stats[4],
+    //     speed: req.body.stats[5],
+    // }
 	res.redirect('/pokemon');
 });
 
@@ -62,11 +70,13 @@ app.get('/pokemon/:id/edit', (req, res) => {
 // SHOW
 // -------------------
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show.ejs', { pokemon: pokemon[req.params.id] });
+    res.render('show.ejs', { 
+        pokemon: pokemon[req.params.id] 
+    });
 });
 
 
 // Express Web Server port - app.listen
 app.listen(port, ()=>{
-    console.log(`listening on port`, port)
+    console.log(`listening on port`, port);
 });

@@ -21,7 +21,7 @@
         <form action="/pokemon/<%=index%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=pokemon.name%>"/><br/>
         
-        Image: <input type="text" name="img" value="<%=pokemon.img%>"/><br>
+        Image: <input type="url" name="img" value="<%=pokemon.img%>"/><br>
 
         Type: <input type="text" name="type" value="<%=pokemon.type%>"/><br>
 
@@ -39,7 +39,7 @@
 
         <br>
 		<br>
-		<input type="submit" name="" value="Submit Changes"/>
+		<input type="submit" name="" value="Submit Changes"/></form>
     <a href="/pokemon"><button>Back Home</button></a>
 </body>
 </html>
